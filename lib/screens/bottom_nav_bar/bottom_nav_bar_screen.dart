@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:taskati_app/screens/add_task/add_task_screen.dart';
 import 'package:taskati_app/screens/home/home_screen.dart';
+import 'package:taskati_app/screens/profile/profile_screen.dart';
 
 import '../../core/utils/app_colors.dart';
 
@@ -16,8 +18,8 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   int _currentIndex=0;
   List screens=[
     HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    AddTaskScreen(),
+    ProfileScreen()
   ];
   @override
   Widget build(BuildContext context) {

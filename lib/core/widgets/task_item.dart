@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:taskati_app/models/task_status_model.dart';
 
+import '../../screens/home/widgets/home_task_status_container.dart';
 import '../utils/app_colors.dart';
 import '../utils/styles.dart';
-
 
 
 
@@ -60,7 +61,31 @@ class TaskItem extends StatelessWidget {
                 ),),
               ),
 
-              TextButton(onPressed: (){}, child: Text("Change Status",style: TextStyles.font12MediumGrey.copyWith(
+              TextButton(onPressed: (){
+                showDialog(context: context, builder:(context)=>AlertDialog(
+                  title: Text("Change Task Status"),
+                  titleTextStyle: TextStyles.font16Medium.copyWith(
+                    color: Colors.black
+                  ),
+
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(12.0.r))),
+                  backgroundColor: Colors.white,
+                  content: Wrap(
+                    children: [
+                      ...List.generate(tasksStatusList.length, (index)=> Padding(
+                        padding:  EdgeInsets.only(bottom: 12.0.h),
+                        child: HomeTaskStatusContainer(
+                          taskStatusModel:tasksStatusList[index] ,
+                          onTap: (){
+                            print("change status");
+                          },
+                        ),
+                      ))
+                    ],
+                  ),
+                ) );
+              }, child: Text("Change Status",style: TextStyles.font12MediumGrey.copyWith(
 
                 color: AppColors.newTaskColor,
                 decoration:TextDecoration.underline,

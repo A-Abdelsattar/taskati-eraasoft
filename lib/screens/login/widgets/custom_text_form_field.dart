@@ -6,9 +6,11 @@ import 'package:taskati_app/core/utils/app_colors.dart';
 class CustomTextFormField extends StatefulWidget {
   final String hintText;
   final TextInputType? keyboardType;
+  final void Function()? onTap;
   final String? Function(String?)? validator;
   final bool isPassword;
-  const CustomTextFormField({super.key, required this.hintText, this.keyboardType, this.validator,this.isPassword=false});
+  final TextEditingController? controller;
+  const CustomTextFormField({super.key, required this.hintText, this.keyboardType, this.validator,this.isPassword=false, this.onTap, this.controller});
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -19,6 +21,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
+      onTap: widget.onTap,
       validator: widget.validator,
       keyboardType:widget.keyboardType ,
       obscureText: widget.isPassword&&isObscure,

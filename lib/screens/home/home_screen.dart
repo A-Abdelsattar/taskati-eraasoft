@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:taskati_app/core/utils/extentions.dart';
 import 'package:taskati_app/core/utils/styles.dart';
 import 'package:taskati_app/core/widgets/task_item.dart';
 import 'package:taskati_app/models/task_status_model.dart';
 import 'package:taskati_app/screens/home/widgets/home_app_bar.dart';
 import 'package:taskati_app/screens/home/widgets/home_task_status_container.dart';
 import 'package:taskati_app/screens/home/widgets/row_filter.dart';
+
+import '../all_tasks/all_tasks_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,7 +31,15 @@ class HomeScreen extends StatelessWidget {
               mainAxisSpacing: 16.h
               ,crossAxisCount: 2,children:List.generate(tasksStatusList.length, (index) => HomeTaskStatusContainer(
                 taskStatusModel:tasksStatusList[index] ,
+              onTap: (){
+                  context.push(AllTasksScreen(
+                    appBarTitle:tasksStatusList[index].statusName,
+                  ));
+
+
+              },
               ),)),
+
               SizedBox(height: 24.h,),
 
               Divider(thickness: 1.h,color: Colors.black12,),
