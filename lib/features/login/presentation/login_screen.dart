@@ -1,11 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskati_app/core/utils/app_colors.dart';
-import 'package:taskati_app/main.dart';
-import 'package:taskati_app/screens/login/logic/login_cubit.dart';
-import 'package:taskati_app/screens/login/widgets/login_form.dart';
+
+import 'widgets/login_form.dart';
+
 
 
 class LoginScreen extends StatelessWidget {

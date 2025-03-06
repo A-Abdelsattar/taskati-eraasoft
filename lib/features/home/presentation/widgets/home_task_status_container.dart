@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:taskati_app/models/task_status_model.dart';
-import 'package:taskati_app/screens/all_tasks/all_tasks_screen.dart';
+
+import '../../../../core/models/task_status_model.dart';
+
 
 
 class HomeTaskStatusContainer extends StatelessWidget {

@@ -5,10 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskati_app/core/utils/app_colors.dart';
 import 'package:taskati_app/core/utils/extentions.dart';
 import 'package:taskati_app/core/utils/styles.dart';
-import 'package:taskati_app/screens/bottom_nav_bar/bottom_nav_bar_screen.dart';
-import 'package:taskati_app/screens/home/home_screen.dart';
-import 'package:taskati_app/screens/login/logic/login_cubit.dart';
 
+import '../../../bottom_nav_bar/bottom_nav_bar_screen.dart';
+import '../../logic/login_cubit.dart';
 import 'custom_text_form_field.dart';
 
 
@@ -72,7 +71,7 @@ class _LoginFormState extends State<LoginForm> {
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       context.read<LoginCubit>().login(
-                          emailController.text, passwordController.text);
+                         email:  emailController.text,password:  passwordController.text);
                     }
                   },
                   child: Container(

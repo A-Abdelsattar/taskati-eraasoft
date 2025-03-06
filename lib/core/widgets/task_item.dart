@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:taskati_app/models/task_status_model.dart';
+import 'package:taskati_app/features/home/data/models/task_model.dart';
 
-import '../../screens/home/widgets/home_task_status_container.dart';
+import '../../features/home/presentation/widgets/home_task_status_container.dart';
+import '../models/task_status_model.dart';
 import '../utils/app_colors.dart';
 import '../utils/styles.dart';
 
 
 
 class TaskItem extends StatelessWidget {
-  const TaskItem({super.key});
+ final Task? task;
+  const TaskItem({super.key,  this.task});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class TaskItem extends StatelessWidget {
             children: [
               Expanded(
                   flex: 5
-                  ,child: Text("Flutter Practice",style: TextStyles.font16Medium,)),
+                  ,child: Text(task?.title??"",style: TextStyles.font16Medium,)),
               Expanded(flex:4,child: Text("Today",style: TextStyles.font12MediumGrey,))
             ],),
           SizedBox(height: 10.h,),
@@ -33,12 +35,12 @@ class TaskItem extends StatelessWidget {
             children: [
               Expanded(
                 flex: 5,
-                child: Text("Todo Application",style: TextStyles.font12MediumGrey.copyWith(
+                child: Text(task?.description??"",style: TextStyles.font12MediumGrey.copyWith(
                     fontWeight: FontWeight.w400
                 ),),
               ),Expanded(
                 flex: 4,
-                child: Text("12:30 PM - 01:30 PM",style: TextStyles.font12MediumGrey.copyWith(
+                child: Text(task?.createdAt??"",style: TextStyles.font12MediumGrey.copyWith(
                     fontWeight: FontWeight.w400
                 ),),
               ),
@@ -54,9 +56,9 @@ class TaskItem extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
-                  color: AppColors.newTaskColor,
+                  color:task?.status=="completed"?AppColors.completeColor :task?.status=="pending"?AppColors.inProgressColor:AppColors.newTaskColor,
                 ),
-                child: Text("New Task",style: TextStyles.font12MediumGrey.copyWith(
+                child: Text(task?.status??"",style: TextStyles.font12MediumGrey.copyWith(
                     color: Colors.white
                 ),),
               ),

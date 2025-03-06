@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:taskati_app/core/utils/styles.dart';
 
-import '../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_colors.dart';
+
 
 
 class HomeAppBar extends StatelessWidget {

@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskati_app/core/utils/app_colors.dart';
 
 class TextStyles{
-
-
  static TextStyle font16Medium= TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w500

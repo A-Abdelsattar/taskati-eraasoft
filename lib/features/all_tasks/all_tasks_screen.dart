@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskati_app/core/widgets/task_item.dart';
-import 'package:taskati_app/screens/all_tasks/widgets/all_tasks_app_bar.dart';
+import 'package:taskati_app/features/all_tasks/widgets/all_tasks_app_bar.dart';
 
 class  AllTasksScreen extends StatelessWidget {
   final String appBarTitle;

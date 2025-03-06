@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:taskati_app/screens/add_task/add_task_screen.dart';
-import 'package:taskati_app/screens/home/home_screen.dart';
-import 'package:taskati_app/screens/profile/profile_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:taskati_app/features/home/logic/home_cubit.dart';
+
 
 import '../../core/utils/app_colors.dart';
+import '../add_task/add_task_screen.dart';
+import '../home/presentation/home_screen.dart';
+import '../profile/profile_screen.dart';
 
 
 
@@ -17,7 +20,10 @@ class BottomNavBarScreen extends StatefulWidget {
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   int _currentIndex=0;
   List screens=[
-    HomeScreen(),
+    BlocProvider(
+  create: (context) => HomeCubit()..getAllTasks(),
+  child: HomeScreen(),
+),
     AddTaskScreen(),
     ProfileScreen()
   ];

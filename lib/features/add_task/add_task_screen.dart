@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskati_app/core/utils/styles.dart';
-import 'package:taskati_app/screens/all_tasks/widgets/all_tasks_app_bar.dart';
-import 'package:taskati_app/screens/login/widgets/custom_text_form_field.dart';
+
+import '../all_tasks/widgets/all_tasks_app_bar.dart';
+import '../login/presentation/widgets/custom_text_form_field.dart';
 
 
 class AddTaskScreen extends StatelessWidget {
